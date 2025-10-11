@@ -23,23 +23,34 @@ Built with **PyTorch**, **Librosa**, and **TensorBoard** for training visualisat
 - **TensorBoard**
 
 ---
-## Usae of each file
+## Usage of each file
 dataset_loader.py
 -Loads the dataset and metadata from speaker_information.csv
+
 -Extracts MFCC features from audio files using Librosa
+
 -Handles missing or invalid files automatically
+
 -Provides AccentDataset and collate_fn for PyTorch dataloaders
 
 train.py
+
 -Trains the CNN model on MFCC features
+
 -Splits dataset into train / validation / test
+
 -Logs loss and accuracy with TensorBoard
+
 -Saves trained model weights (models/accent_cnn.pt)
+
 -Saves label encoder classes (features/label_classes.npy)
 
 inference.py
+
 -Loads the trained model and label classes
+
 -Takes an input .mp3 file
+
 -Predicts the speaker’s country/accent
 ---
 
