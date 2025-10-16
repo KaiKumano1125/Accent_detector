@@ -22,11 +22,11 @@ class AudioDataset(Dataset):
         else:
             raise KeyError("CSV must contain 'file' or 'filename' column.")
 
-        # --- Fix extensions and keep only existing audio ---
+  
         valid_rows = []
         for _, row in self.df.iterrows():
             fname = str(row[file_col])
-            # ensure extension
+
             if not fname.lower().endswith((".wav", ".mp3")):
                 fname += ".mp3"
             path = os.path.join(audio_dir, os.path.basename(fname))
@@ -34,14 +34,14 @@ class AudioDataset(Dataset):
                 row[file_col] = os.path.basename(fname)
                 valid_rows.append(row)
             else:
-                print(f"⚠️  Skipping missing file: {fname}")
+                print(f"Skipping missing file: {fname}")
 
         self.df = pd.DataFrame(valid_rows).reset_index(drop=True)
 
         # --- Encode labels (country) ---
         self.le = LabelEncoder()
         self.df["label"] = self.le.fit_transform(self.df["country"])
-        print(f"✅ Loaded {len(self.df)} valid audio samples after filtering.")
+        print(f"Loaded {len(self.df)} valid audio samples after filtering.")
 
     def __len__(self):
         return len(self.df)
