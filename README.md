@@ -55,12 +55,12 @@ Built with **PyTorch**, **Librosa**, and **TensorBoard** for training visualisat
 
 ## Setup
 Clone the repository and install dependencies:
-
-## Author
-Kai Kumano 
-
 ```bash
 git clone https://github.com/KaiKumano1125/accent_classifier.git
 cd accent_classifier
 pip install -r requirements.txt
+```
+
+##Author
+Kai Kumano 
 
