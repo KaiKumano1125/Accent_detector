@@ -1,26 +1,30 @@
-# Accent Classifier using PyTorch
+# Accent Classifier
 
 A deep learning project that classifies **English accents by country** using the [Speech Accent Archive dataset](https://www.kaggle.com/datasets/rtatman/speech-accent-archive).  
 Built with **PyTorch**, **Librosa**, and **TensorBoard** for training visualisation.
 
 ---
 
-## Features
-- Preprocesses and filters the Kaggle speech accent dataset
-- Extracts MFCC (Mel-Frequency Cepstral Coefficients) features from `.mp3` files
-- Trains a lightweight **CNN-based accent classifier**
-- Logs loss and accuracy in **TensorBoard**
-- Supports GPU acceleration (CUDA)
-- Automatically skips missing files and pads variable-length audio
+##  Features
+- **Dataset Handling:** Loads `tw_food_101` with automatic class detection (101 folders)
+- **Model Training:** Fine-tunes `ResNet-18` with Adam optimizer and Cross-Entropy loss
+- **Preprocessing:** Resizes and normalizes images to `224×224`
+- **Acceleration:** Full GPU (CUDA) support for efficient training
+- **Monitoring:** Integrated TensorBoard logging for loss and accuracy
+- **Model Export:** Saves trained weights to `src/output/tw_food101_best.pth`
+- **Inference:** Includes a simple script (`inference.py`) for single-image prediction
+
 
 ---
 
 ## Tech Stack
-- **Python 3.10+**
-- **PyTorch**
-- **Librosa**
-- **Scikit-learn**
-- **TensorBoard**
+
+- **Language:** Python 3.10+
+- **Deep Learning Framework:** PyTorch
+- **Audio/Signal Processing:** Librosa
+- **Machine Learning Utilities:** Scikit-learn
+- **Logging & Visualisation:** TensorBoard
+
 
 ---
 ##  Usage of Each File
@@ -51,6 +55,9 @@ Built with **PyTorch**, **Librosa**, and **TensorBoard** for training visualisat
 
 ## Setup
 Clone the repository and install dependencies:
+
+## Author
+Kai Kumano 
 
 ```bash
 git clone https://github.com/KaiKumano1125/accent_classifier.git
